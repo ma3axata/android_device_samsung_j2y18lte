@@ -1,0 +1,160 @@
+# Audio
+af.fast_track_multiplier=1
+audio_hal.period_size=192
+audio.dolby.ds2.enabled=true
+audio.deep_buffer.media=true
+audio.offload.buffer.size.kb=64
+audio.offload.gapless.enabled=true
+audio.offload.min.duration.secs=30
+audio.offload.multiple.enabled=false
+audio.offload.pcm.16bit.enable=true
+audio.offload.pcm.24bit.enable=true
+audio.offload.track.enable=true
+audio.offload.video=true
+audio.playback.mch.downsample=true
+audio.safx.pbe.enabled=true
+
+persist.audio.fluence.speaker=true
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+
+ro.qc.sdk.audio.fluencetype=none
+ro.qc.sdk.audio.ssr=false
+tunnel.audio.encode=false
+use.voice.path.for.pcm.voip=true
+rec.playback.conc.disabled=true
+voice.conc.fallbackpath=deep-buffer
+voice.playback.conc.disabled=true
+voice.record.conc.disabled=false
+
+use.qti.sw.alac.decoder=true
+use.qti.sw.ape.decoder=true
+
+#CABL
+ro.qualcomm.cabl=0
+
+# Bluetooth
+bluetooth.hfp.client=1
+qcom.bluetooth.soc=smd
+ro.qualcomm.bt.hci_transport=smd
+
+# Display
+debug.sf.hw=1
+debug.egl.hw=1
+debug.enable.sglscale=1
+debug.mdpcomp.logs=0
+dev.pm.dyn_samplingrate=1
+persist.hwc.mdpcomp.enable=true
+persist.demo.hdmirotationlock=false
+ro.opengles.version=196608
+persist.graphics.vulkan.disable=true
+ro.sf.lcd_density=240
+
+# DRM
+drm.service.enabled=true
+
+# Enable B service adj transition by default
+ro.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=5
+ro.sys.fw.bservice_age=5000
+
+# FM radio
+ro.fm.transmitter=false
+
+# GPS
+persist.gps.qc_nlp_in_use=1
+persist.loc.nlp_name=com.qualcomm.location
+ro.gps.agps_provider=1
+
+# Media
+media.msm8956hw=0
+mm.enable.smoothstreaming=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.qcom_parser=1048575
+video.disable.ubwc=1
+vidc.disable.split.mode=1
+persist.mm.sta.enable=0
+
+# NITZ
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+ro.vendor.at_library=libqti-at.so
+ro.vendor.gt_library=libqti-gt.so
+
+# SAMP SPCM
+sys.config.samp_spcm_enable=true
+sys.config.spcm_db_enable=true
+sys.config.spcm_db_launcher=true
+sys.config.spcm_preload_enable=true
+
+# RIL
+keyguard.no_require_sim=true
+telephony.lteOnCdmaDevice=0
+rild.libpath=/system/lib/libsec-ril.so
+rild.libpath2=/system/lib/libsec-ril-dsds.so
+persist.cne.feature=0
+persist.radio.lte_vrte_ltd=1
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.add_power_save=1
+persist.data.netmgrd.qos.enable=false
+persist.data.ibfc.enable=true
+persist.radio.new.profid=true
+persist.radio.snapshot_enabled=1
+persist.radio.snapshot_timer=22
+persist.radio.sib16_support=1
+
+# Time Services
+persist.timed.enable=true
+
+# Trim properties
+ro.sys.fw.use_trim_settings=true
+ro.sys.fw.empty_app_percent=50
+ro.sys.fw.trim_empty_percent=100
+ro.sys.fw.trim_cache_percent=100
+ro.sys.fw.trim_enable_memory=1073741824
+
+# Wi-Fi
+wifi.interface=wlan0
+
+#other
+persist.camera.is_type=1
+persist.camera.gyro.android=1
+persist.qfp=false
+ro.core_ctl_min_cpu=2
+ro.core_ctl_max_cpu=4
+ro.sys.fw.bservice_enable=true
+ro.sys.fw.dex2oat_thread_count=4
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+camera.display.umax=1920x1080
+camera.display.lmax=1280x720
+sys.config.phone_start_early=true
+ro.astcenc.astcsupport=1
+ro.mct.compressiontype=ETC1
+ro.hdcp2.rx=tz
+ro.securestorage.support=true
+security.mdpp.mass=skmm
+ro.frp.pst=/dev/block/persistent
+ro.security.vpnpp.ver=1.4
+ro.security.vpnpp.release=9.0
+ro.error.receiver.default=com.samsung.receiver.error
+ro.sec.ice.key_update=true
+ro.config.dha_cached_min=3
+ro.config.dha_cached_max=6
+ro.config.dha_empty_min=8
+ro.config.dha_empty_max=16
+ro.config.dha_lmk_scale=0.8
+ro.config.dha_th_rate=2.4
+ro.config.infinite_bg_enable=false
+ro.config.dha_pwhitelist_enable=1
+config.disable_consumerir=true

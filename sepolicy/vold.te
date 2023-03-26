@@ -1,0 +1,6 @@
+allow vold adsprpcd_file:dir { ioctl };
+allow vold adsprpcd_file:dir { open };
+allow vold adsprpcd_file:dir { read };
+allow vold efs_file:dir { ioctl };
+allow vold efs_file:dir { open };
+allow vold efs_file:dir { read };
