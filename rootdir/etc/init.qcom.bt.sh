@@ -178,7 +178,7 @@ config_bt ()
            setprop ro.bluetooth.hfp.ver 1.7
        fi
        ;;
-    "msm8998")
+    "msmcobalt")
        setprop ro.bluetooth.hfp.ver 1.6
        ;;
     *)

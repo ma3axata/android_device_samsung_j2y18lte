@@ -1,8 +1,16 @@
+# ACBD Data
+etc/Bluetooth_cal.acdb
+etc/General_cal.acdb
+etc/Global_cal.acdb
+etc/Handset_cal.acdb
+etc/Hdmi_cal.acdb
+etc/Headset_cal.acdb
+etc/Speaker_cal.acdb
 
 # ADSP
 bin/adsprpcd
-vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
+vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmdsprpc.so

@@ -129,6 +129,7 @@ service vcsFPService /system/bin/vcsFPService
     group system
 
 # sem_daemon permission
+    chown system system /efs/sec_efs/ssp_data
     chmod 0644 /efs/sec_efs/ssp_data
 
 # sem_daemon

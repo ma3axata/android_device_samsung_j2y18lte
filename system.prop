@@ -13,11 +13,10 @@ audio.offload.track.enable=true
 audio.offload.video=true
 audio.playback.mch.downsample=true
 audio.safx.pbe.enabled=true
-
-persist.audio.fluence.speaker=true
-persist.audio.fluence.voicecall=true
+persist.audio.fluence.audiorec=false
+persist.audio.fluence.speaker=false
+persist.audio.fluence.voicecall=false
 persist.audio.fluence.voicerec=false
-
 ro.qc.sdk.audio.fluencetype=none
 ro.qc.sdk.audio.ssr=false
 tunnel.audio.encode=false
@@ -26,9 +25,10 @@ rec.playback.conc.disabled=true
 voice.conc.fallbackpath=deep-buffer
 voice.playback.conc.disabled=true
 voice.record.conc.disabled=false
-
 use.qti.sw.alac.decoder=true
 use.qti.sw.ape.decoder=true
+ro.config.vc_call_vol_steps=15
+ro.config.media_vol_steps=20
 
 #CABL
 ro.qualcomm.cabl=0
@@ -38,9 +38,26 @@ bluetooth.hfp.client=1
 qcom.bluetooth.soc=smd
 ro.qualcomm.bt.hci_transport=smd
 
-# Display
-debug.sf.hw=1
-debug.egl.hw=1
+# Camera
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+camera.display.umax=1920x1080
+camera.display.lmax=1280x720
+camera.lowpower.record.enable=1
+vidc.enc.dcvs.extra-buff-count=2
+persist.camera.feature.cac=1
+persist.camera.gyro.disable=0
+persist.camera.imglib.cac3=2
+persist.camera.isp.clock.optmz=0
+
+# DRM
+drm.service.enabled=true
+
+# FM radio
+ro.fm.transmitter=false
+
+# Graphics
+debug.sf.hw=0
+debug.egl.hw=0
 debug.enable.sglscale=1
 debug.mdpcomp.logs=0
 dev.pm.dyn_samplingrate=1
@@ -49,32 +66,35 @@ persist.demo.hdmirotationlock=false
 ro.opengles.version=196608
 persist.graphics.vulkan.disable=true
 ro.sf.lcd_density=240
-
-# DRM
-drm.service.enabled=true
-
-# Enable B service adj transition by default
-ro.sys.fw.bservice_enable=true
-ro.sys.fw.bservice_limit=5
-ro.sys.fw.bservice_age=5000
-
-# FM radio
-ro.fm.transmitter=false
+debug.composition.type=c2d
 
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
+ro.pip.gated=0
 
 # Media
-media.msm8956hw=0
-mm.enable.smoothstreaming=true
-mmp.enable.3g2=true
+vidc.enc.narrow.searchrange=1
 media.aac_51_output_enabled=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-http=true
+media.stagefright.enable-player=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+media.stagefright.use-awesome=true
+media.swhevccodectype=0
 mm.enable.qcom_parser=1048575
-video.disable.ubwc=1
+mm.enable.smoothstreaming=true
+media.msm8956hw=0
+mmp.enable.3g2=true
+vidc.enc.disable_bframes=1
 vidc.disable.split.mode=1
-persist.mm.sta.enable=0
+vidc.dec.downscalar_width=1920
+vidc.dec.downscalar_height=1088
 
 # NITZ
 persist.rild.nitz_plmn=
@@ -99,20 +119,27 @@ sys.config.spcm_db_launcher=true
 sys.config.spcm_preload_enable=true
 
 # RIL
-keyguard.no_require_sim=true
-telephony.lteOnCdmaDevice=0
-rild.libpath=/system/lib/libsec-ril.so
-rild.libpath2=/system/lib/libsec-ril-dsds.so
+DEVICE_PROVISIONED=1
 persist.cne.feature=0
-persist.radio.lte_vrte_ltd=1
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.add_power_save=1
+persist.radio.custom_ecc=1
+persist.radio.multisim.config=dsds
+persist.radio.sib16_support=0
 persist.data.netmgrd.qos.enable=false
+persist.data.mode=concurrent
+persist.data.dpm.enable=true
+persist.data.dropssdp=false
 persist.data.ibfc.enable=true
 persist.radio.new.profid=true
-persist.radio.snapshot_enabled=1
-persist.radio.snapshot_timer=22
-persist.radio.sib16_support=1
+telephony.lteOnGsmDevice=1
+ro.oem_unlock_supported=1
+ro.multisim.simslotcount=2
+ro.multisim.set_audio_params=true
+ro.telephony.ril.config=simactivation
+rild.libpath=/system/lib64/libsec-ril.so
+rild.libpath2=/system/lib64/libsec-ril-dsds.so
+ro.telephony.ril_class=msm8937RIL
 
 # Time Services
 persist.timed.enable=true
@@ -126,18 +153,12 @@ ro.sys.fw.trim_enable_memory=1073741824
 
 # Wi-Fi
 wifi.interface=wlan0
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
 
 #other
-persist.camera.is_type=1
-persist.camera.gyro.android=1
-persist.qfp=false
 ro.core_ctl_min_cpu=2
 ro.core_ctl_max_cpu=4
-ro.sys.fw.bservice_enable=true
-ro.sys.fw.dex2oat_thread_count=4
-camera.hal1.packagelist=com.skype.raider,com.google.android.talk
-camera.display.umax=1920x1080
-camera.display.lmax=1280x720
 sys.config.phone_start_early=true
 ro.astcenc.astcsupport=1
 ro.mct.compressiontype=ETC1
@@ -147,7 +168,6 @@ security.mdpp.mass=skmm
 ro.frp.pst=/dev/block/persistent
 ro.security.vpnpp.ver=1.4
 ro.security.vpnpp.release=9.0
-ro.error.receiver.default=com.samsung.receiver.error
 ro.sec.ice.key_update=true
 ro.config.dha_cached_min=3
 ro.config.dha_cached_max=6
@@ -157,4 +177,3 @@ ro.config.dha_lmk_scale=0.8
 ro.config.dha_th_rate=2.4
 ro.config.infinite_bg_enable=false
 ro.config.dha_pwhitelist_enable=1
-config.disable_consumerir=true

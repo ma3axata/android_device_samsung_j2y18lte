@@ -19,10 +19,19 @@ $(call inherit-product, device/samsung/j2y18lte/full_j2y18lte.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_j2y18lte
-BOARD_VENDOR := Samsung
+# Release name
+PRODUCT_RELEASE_NAME := Samsung Galaxy J2 Pro 2018
 
+# Boot animation
+TARGET_SCREEN_WIDTH := 540
+TARGET_SCREEN_HEIGHT := 960
+
+## Device identifier. This must come after all inclusions
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_CHARACTERISTICS := phone
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
+
+PRODUCT_NAME := lineage_j2y18lte
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=samsung/j2y18ltejx/j2y18lte:7.1.1/NMF26X/J250FXXU2ASK1:user/release-keys \

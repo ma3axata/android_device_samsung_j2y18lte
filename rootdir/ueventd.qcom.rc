@@ -139,8 +139,8 @@
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
 /dev/hw_random            0600   root       root
-/dev/sdsprpc-smd          0660   system     system
-/dev/adsprpc-smd          0664   system     system
+/dev/sdsprpc-smd          0666   system     system
+/dev/adsprpc-smd          0666   system     system
 
 #permissions for audio
 /dev/wcd-dsp-glink        0660   system     audio
@@ -266,7 +266,6 @@
 
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
-/dev/block/platform/soc/624000.ufshc/by-name/config     0600   system     system
 /dev/block/platform/soc/7464900.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/624000.ufshc/by-name/frp        0600   system     system
 /dev/block/platform/soc/1da4000.ufshc/by-name/frp       0600   system     system
